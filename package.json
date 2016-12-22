@@ -11,14 +11,84 @@
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.sayHello"
+        "onCommand:extension.create_db",
+        "onCommand:extension.look_up_symbol",
+        "onCommand:extension.look_up_global_definition",
+        "onCommand:extension.look_up_called_functions",
+        "onCommand:extension.look_up_calling_functions",
+        "onCommand:extension.look_up_text_string",
+        "onCommand:extension.close_all_cscope_searches"
     ],
     "main": "./out/src/extension",
     "contributes": {
-        "commands": [{
-            "command": "extension.sayHello",
-            "title": "Hello World"
-        }]
+        "commands": [
+            {
+                "command": "extension.create_db",
+                "title": "cscope: create cscope DB"
+            }, 
+            {
+                "command": "extension.look_up_symbol",
+                "title": "cscope: look up symbol"
+            },
+            {
+                "command": "extension.look_up_global_definition",
+                "title": "cscope: look up global definition"
+            },
+            {
+                "command": "extension.look_up_called_functions",
+                "title": "cscope: look up called functions"
+            },
+            {
+                "command": "extension.look_up_calling_functions",
+                "title": "cscope: look up calling functions"
+            },
+            {
+                "command": "extension.look_up_text_string",
+                "title": "cscope: look up text string"
+            },
+            {
+                "command": "extension.close_all_cscope_searches",
+                "title": "cscope: close all cscope search windows"
+            }
+        ],
+        "keybindings": 
+        [
+            {
+                "command": "extension.create_db",
+                "key": "alt+f3",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "extension.look_up_symbol",
+                "key": "alt+f4",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "extension.look_up_global_definition",
+                "key": "alt+f5",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "extension.look_up_called_functions",
+                "key": "alt+f6",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "extension.look_up_calling_functions",
+                "key": "alt+f7",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "extension.look_up_text_string",
+                "key": "alt+f8",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "extension.close_all_cscope_searches",
+                "key": "alt+f9",
+                "when": "editorTextFocus"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "tsc -p ./",
@@ -33,3 +103,4 @@
         "@types/mocha": "^2.2.32"
     }
 }
+
